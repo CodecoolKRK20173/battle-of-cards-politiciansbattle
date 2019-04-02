@@ -5,6 +5,15 @@ import java.util.List;
 
 public class Pile {
     private List<Card> cards;
+
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public PileType getPileType() {
+        return pileType;
+    }
+
     PileType pileType;
 
     Pile(PileType pileType){
@@ -12,10 +21,15 @@ public class Pile {
         this.pileType = pileType;
     }
 
+    public Card getTopCard(){
+        return cards.get(-1);
+    }
+
+    public enum PileType{
+        stack,
+        hand,
+        table
+    }
 }
 
-enum PileType{
-    stack,
-    hand,
-    table
-}
+

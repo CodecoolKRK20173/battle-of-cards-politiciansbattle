@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54c3a6ac-5423-4d6a-9456-bf5eab3b35c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Pile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Pile.java" beforeDir="false" afterPath="$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Pile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +37,35 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#274#275#0" expanded="true" />
+                <element signature="e#301#302#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#359#360#0" expanded="true" />
+                <element signature="e#399#400#0" expanded="true" />
+                <element signature="e#427#428#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Pile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="120">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#211#212#0" expanded="true" />
+                <element signature="e#248#249#0" expanded="true" />
+                <element signature="e#279#280#0" expanded="true" />
+                <element signature="e#315#316#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,6 +99,7 @@
         <option value="$PROJECT_DIR$/battleOfCards/src/test/java/com/codecool/battleofcards/AppTest.java" />
         <option value="$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Main.java" />
         <option value="$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Card.java" />
+        <option value="$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Player.java" />
         <option value="$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Pile.java" />
       </list>
     </option>
@@ -138,7 +162,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../klondike-2-stefa-pat" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -221,13 +245,21 @@
       <option name="project" value="LOCAL" />
       <updated>1554215367680</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="card (enum todo) + pile almost done-">
+      <created>1554216864298</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554216864298</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919486" visible="true" weight="0.255119" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49919486" visible="true" weight="0.255119" />
       <window_info id="Structure" order="1" sideWeight="0.50080514" side_tool="true" weight="0.255119" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -285,18 +317,12 @@
     <MESSAGE value="pom" />
     <MESSAGE value="try1" />
     <MESSAGE value="card" />
-    <option name="LAST_COMMIT_MESSAGE" value="card" />
+    <MESSAGE value="card (enum todo) + pile almost done-" />
+    <option name="LAST_COMMIT_MESSAGE" value="card (enum todo) + pile almost done-" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/battleOfCards/src/test/java/com/codecool/battleofcards/AppTest.java" />
     <entry file="file://$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Main.java" />
-    <entry file="file://$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/Comparator.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -319,12 +345,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/battleOfCards/src/main/java/com/codecool/battleofcards/Pile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="120">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#248#249#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
           </folding>
         </state>
       </provider>
