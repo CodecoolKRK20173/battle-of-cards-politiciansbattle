@@ -42,6 +42,10 @@ public class Pile {
         hand,
         table
     }
+
+    public void addCard(Card card){
+        cards.add(card);
+    }
 }
 
 
