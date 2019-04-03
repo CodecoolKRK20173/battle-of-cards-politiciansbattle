@@ -2,6 +2,7 @@ package com.codecool.battleofcards;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class Pile {
     private PileType pileType;
@@ -15,7 +16,17 @@ public class Pile {
         return pileType;
     }
 
-    
+    public void shuffle(){
+        Collections.shuffle(cards);
+    }
+
+    public void dealCards(int numberOfPlayers){
+        
+    }
+
+    public void moveCardToPile(Card card){
+        PileType.getPileType()
+    }
 
     Pile(PileType pileType){
         this.cards = new ArrayList<>();
