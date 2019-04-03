@@ -1,4 +1,4 @@
-package main.java.com.codecool.battleofcards;
+package com.codecool.battleofcards;
 
 
 import java.util.Comparator;
@@ -30,25 +30,19 @@ public class Card{
 }
 
 class sortBySupport implements Comparator<Card>{
-    @Override
     public int compare(Card card1, Card card2) {
-
         return card1.support - card2.support;
     }
 }
 
 class sortByMoney implements Comparator<Card>{
-    @Override
     public int compare(Card card1, Card card2) {
-
         return card1.money - card2.money;
     }
 }
 
 class sortByBribes implements Comparator<Card>{
-    @Override
     public int compare(Card card1, Card card2) {
-
         return card1.bribes - card2.bribes;
     }
 }

@@ -1,4 +1,4 @@
-package main.java.com.codecool.battleofcards;
+package com.codecool.battleofcards;
 
 /**
  * Hello world!
@@ -8,6 +8,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello Worldxddddd!" );
+        System.out.println( "Hello WorldxddddddXD!" );
     }
 }

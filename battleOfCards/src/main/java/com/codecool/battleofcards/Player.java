@@ -1,4 +1,4 @@
-package main.java.com.codecool.battleofcards;
+package com.codecool.battleofcards;
 
 public class Player {
     private Pile hand;
