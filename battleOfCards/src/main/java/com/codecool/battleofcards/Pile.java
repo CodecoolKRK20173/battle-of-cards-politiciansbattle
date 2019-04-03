@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pile {
+    private PileType pileType;
     private List<Card> cards;
 
     public List<Card> getCards() {
@@ -14,7 +15,7 @@ public class Pile {
         return pileType;
     }
 
-    PileType pileType;
+    
 
     Pile(PileType pileType){
         this.cards = new ArrayList<>();
