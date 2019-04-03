@@ -16,17 +16,20 @@ public class Pile {
         return pileType;
     }
 
+    public Card getCard(int index){
+        return cards.get(index);
+    }
+
     public void shuffle(){
         Collections.shuffle(cards);
     }
 
-    public void dealCards(int numberOfPlayers){
-        
-    }
 
-    public void moveCardToPile(Card card){
-        PileType.getPileType()
+    public void removeCard(int index){
+        cards.remove(index);
     }
+        
+    
 
     Pile(PileType pileType){
         this.cards = new ArrayList<>();
