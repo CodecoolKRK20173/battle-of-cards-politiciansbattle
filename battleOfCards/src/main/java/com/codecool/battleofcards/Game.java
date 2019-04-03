@@ -23,15 +23,14 @@ public class Game {
 
     public void dealCards(){
         int numOfPlayers = players.size();
-        int cardsPerPlayer = table.getCards().size()/numOfPlayers;
         int restFromDivision = table.getCards().size()%numOfPlayers;
-        int end = 0;
+        
         if (restFromDivision > 0){
             for (int i = 0; i < restFromDivision; i++)
                 table.removeCard(i);
         }
-        while (!table == null){
-            for (int last = players.size(), ind=0; ind<players.size(); last--, ind++){
+        while (!(table == null)){
+            for (int last = table.getCards().size(), ind=0; ind<players.size(); ind++){
                 players.get(ind).addCardToPile(table.getCard(last));
                 table.removeCard(last);
             }
