@@ -46,7 +46,7 @@ public class Game {
                 Collections.sort(playerTopCards, new sortBySupport());
             }else if(demand == "money"){
                 Collections.sort(playerTopCards, new sortByMoney());
-            }else throw new IOException("sorry something went wrong");
+            }else throw new IOException("Something went wrong. sorry!");
         }
         return playerTopCards.get(topCard);
     }
@@ -63,7 +63,18 @@ public class Game {
         int topCard = 0;
         for (Player player : players) {
             players.get(winnerIndex).getStack().addCard(player.getStackTopCard());
-            players.get(winnerIndex).getStack().getCards().remove(topCard);
+            player.getStack().getCards().remove(topCard);
+
         }
+    }
+
+    public int getWinnerIndex(Card card) throws IOException{
+        int winnerIndex = 0;
+        for (Player player : players) {
+            if(player.getStackTopCard() == card){
+                winnerIndex = players.indexOf(player);
+            }else throw new IOException("given card doest exist.");
+        }
+        return winnerIndex;
     }
 }
