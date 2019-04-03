@@ -44,6 +44,11 @@ public class Card{
         public int getSupport() {
             return this.support;
         }
+
+        public String toString(){
+            String cardToString = this.name + "\n" + this.support + "\n" + this.money + "\n" + this.bribes;
+            return cardToString;
+        }
     }
 }
 
