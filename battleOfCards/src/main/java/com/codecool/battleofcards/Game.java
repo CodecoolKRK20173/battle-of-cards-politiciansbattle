@@ -3,6 +3,8 @@ package com.codecool.battleofcards;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.codecool.battleofcards.Card.Cards;
+
 
 public class Game {
     private Pile table;
@@ -12,6 +14,7 @@ public class Game {
         this.table = new Pile(Pile.PileType.table);
         this.players = new ArrayList<>();
         setPlayers(players);
+        setTablePile();
     }
 
 
@@ -20,5 +23,21 @@ public class Game {
             this.players.add(new Player());
         }
     }
+
+    private void setTablePile(){
+        for (Cards var : Cards.values()) {
+            table.addCard(new Card(var));
+        }
+    }
+
+    public Pile getTable(){
+        return table;
+    }
+
+    // private void dealCards(){
+    //     for (int i = 0; i < 6 ; i++) {
+    //         table.addCard(card);
+    //     }
+    // }
 
 }

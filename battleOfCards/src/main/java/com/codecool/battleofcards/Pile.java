@@ -15,7 +15,7 @@ public class Pile {
         return pileType;
     }
 
-    
+
 
     Pile(PileType pileType){
         this.cards = new ArrayList<>();
@@ -30,6 +30,10 @@ public class Pile {
         stack,
         hand,
         table
+    }
+
+    public void addCard(Card card){
+        cards.add(card);
     }
 }
 
