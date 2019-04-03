@@ -37,6 +37,7 @@ public class Game {
     }
 
     public Card getWiningCard(String demand) throws IOException{
+        int topCard = 0;
         ArrayList<Card> playerTopCards = getPlayersTopCards();
         for (Player player : players) {
             if(demand == "bribe"){
@@ -45,9 +46,9 @@ public class Game {
                 Collections.sort(playerTopCards, new sortBySupport());
             }else if(demand == "money"){
                 Collections.sort(playerTopCards, new sortByMoney());
-            }else throw new IOException("sorry somthing went wrong");
+            }else throw new IOException("sorry something went wrong");
         }
-        return playerTopCards.get(-1);
+        return playerTopCards.get(topCard);
     }
 
     private ArrayList<Card> getPlayersTopCards(){
@@ -58,4 +59,11 @@ public class Game {
         return playerTopCards;
     }
 
+    public void moveCardToWinner(int winnerIndex){
+        int topCard = 0;
+        for (Player player : players) {
+            players.get(winnerIndex).getStack().addCard(player.getStackTopCard());
+            players.get(winnerIndex).getStack().getCards().remove(topCard);
+        }
+    }
 }
