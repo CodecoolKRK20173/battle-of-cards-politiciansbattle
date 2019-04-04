@@ -49,11 +49,12 @@ public class Game {
         }
 
         for (int i = 0; i<players.size(); i++) {
-            if(demand == "bribe"){
-                Collections.sort(playerTopCards, new sortByBribes());
-            }else if(demand == "support"){
+            if(demand.equals("bribe")){
+                System.out.println("hej jestem TU");
+                playerTopCards.sort(new sortByBribes());
+            }else if(demand.equals("support")){
                 Collections.sort(playerTopCards, new sortBySupport());
-            }else if(demand == "money"){
+            }else if(demand.equals("money")){
                 Collections.sort(playerTopCards, new sortByMoney());
             }
 
