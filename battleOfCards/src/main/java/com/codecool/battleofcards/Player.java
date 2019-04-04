@@ -20,4 +20,8 @@ public class Player {
     public Card getStackTopCard(){
         return stack.getTopCard();
     }
+
+    public void addCardToPile(Card card){
+        stack.addCard(card);
+    }
 }

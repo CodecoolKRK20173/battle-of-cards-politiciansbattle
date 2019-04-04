@@ -77,4 +77,24 @@ public class Game {
         }
         return winnerIndex;
     }
+    public void dealCards(){
+        int numOfPlayers = players.size();
+        int restFromDivision = table.getCards().size()%numOfPlayers;
+        
+        if (restFromDivision > 0){
+            for (int i = 0; i < restFromDivision; i++)
+                table.removeCard(i);
+        }
+        while (!(table == null)){
+            for (int last = table.getCards().size(), ind=0; ind<players.size(); ind++){
+                players.get(ind).addCardToPile(table.getCard(last));
+                table.removeCard(last);
+            }
+        }
+        
+        
+    }
+
+
+
 }
