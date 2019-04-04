@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.ArrayList;
 import com.codecool.battleofcards.Card.Cards;
 
 
@@ -17,6 +16,7 @@ public class Game {
         this.players = new ArrayList<>();
         setPlayers(players);
         setTablePile();
+        dealCards();
     }
 
 
@@ -81,14 +81,16 @@ public class Game {
         int numOfPlayers = players.size();
         int restFromDivision = table.getCards().size()%numOfPlayers;
         
+        
         if (restFromDivision > 0){
             for (int i = 0; i < restFromDivision; i++)
                 table.removeCard(i);
         }
         while (!(table == null)){
-            for (int last = table.getCards().size(), ind=0; ind<players.size(); ind++){
+            for (int last = table.getCards().size(), ind=0; ind<players.size(); ind++, last--){
                 players.get(ind).addCardToPile(table.getCard(last));
                 table.removeCard(last);
+                System.out.println("this is " + ind + "iteration");
             }
         }
         
