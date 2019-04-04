@@ -21,12 +21,10 @@ public class Pile {
     }
 
     public void dealCards(int numberOfPlayers){
-        
+
     }
 
-    public void moveCardToPile(Card card){
-        PileType.getPileType()
-    }
+
 
     Pile(PileType pileType){
         this.cards = new ArrayList<>();
