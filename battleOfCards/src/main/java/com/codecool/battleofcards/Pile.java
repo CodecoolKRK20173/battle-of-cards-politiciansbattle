@@ -1,6 +1,7 @@
 package com.codecool.battleofcards;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Collections;
 
@@ -16,13 +17,20 @@ public class Pile {
         return pileType;
     }
 
+    public Card getCard(int index){
+        return cards.get(index);
+    }
+
     public void shuffle(){
         Collections.shuffle(cards);
     }
 
-    public void dealCards(int numberOfPlayers){
 
+    public void removeCard(int index){
+        cards.remove(index);
     }
+
+
 
 
 
@@ -32,7 +40,7 @@ public class Pile {
     }
 
     public Card getTopCard(){
-        return cards.get(-1);
+        return cards.get(0);
     }
 
     public enum PileType{
@@ -43,6 +51,10 @@ public class Pile {
 
     public void addCard(Card card){
         cards.add(card);
+    }
+
+    public String toString(){
+        return Arrays.toString(cards.toArray());
     }
 }
 

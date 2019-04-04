@@ -16,6 +16,17 @@ public class Game {
         this.players = new ArrayList<>();
         setPlayers(players);
         setTablePile();
+        dealCards();
+        System.out.println(this.table.getCards().size()+" table size");
+        System.out.println(this.players.size()+" players numb");
+
+
+        for (Player player : this.players) {
+            System.out.println(player.getStack().getCards().size() + " player deck size");
+        }
+    }
+    public List<Player> getPlayers(){
+        return players;
     }
 
 
@@ -35,9 +46,10 @@ public class Game {
         return table;
     }
 
-    public Card getWiningCard(String demand) throws IOException{
+    public Card getWiningCard(String demand) {
         int topCard = 0;
         ArrayList<Card> playerTopCards = getPlayersTopCards();
+        System.out.println(playerTopCards.size()+" player top cards size");
         for (Player player : players) {
             if(demand == "bribe"){
                 Collections.sort(playerTopCards, new sortByBribes());
@@ -45,7 +57,7 @@ public class Game {
                 Collections.sort(playerTopCards, new sortBySupport());
             }else if(demand == "money"){
                 Collections.sort(playerTopCards, new sortByMoney());
-            }else throw new IOException("sorry something went wrong");
+            }
         }
         return playerTopCards.get(topCard);
     }
@@ -62,7 +74,38 @@ public class Game {
         int topCard = 0;
         for (Player player : players) {
             players.get(winnerIndex).getStack().addCard(player.getStackTopCard());
-            players.get(winnerIndex).getStack().getCards().remove(topCard);
+            player.getStack().getCards().remove(topCard);
+
         }
     }
+
+    public int getWinnerIndex(Card card) {
+        int winnerIndex = 0;
+        for (Player player : players) {
+            if(player.getStackTopCard() == card){
+                winnerIndex = players.indexOf(player);
+            }
+        }
+        return winnerIndex;
+    }
+    public void dealCards(){
+        int numOfPlayers = players.size();
+        int restFromDivision = table.getCards().size()%numOfPlayers;
+        // System.out.println(restFromDivision+" rest from div");
+        if (restFromDivision > 0){
+            for (int i = 0; i < restFromDivision; i++)
+                table.removeCard(i);
+        }
+        System.out.println(table.toString());
+        int maxIterations = table.getCards().size() / players.size();
+        for (int i = 0; i < maxIterations; i++) {
+            for (int ind=0; ind<players.size() ; ind++){
+                players.get(ind).addCardToPile(table.getCard(0));
+                table.removeCard(0);
+
+            }
+        }
+
+    }
+
 }
