@@ -45,28 +45,51 @@ public class Card{
             return this.support;
         }
     }
+    public String toString(){
+        String cardToString = politicians.getName() + " " +"Support: "+ politicians.getSupport() + " "
+                            + "Money: "+ politicians.getMoney() + " " +"Bribes: "+ politicians.getBribes() + "\n";
+        return cardToString;
+    }
 }
 
 
 class sortBySupport implements Comparator<Card>{
     public int compare(Card card1, Card card2) {
-        return card1.getPoliticians().getSupport()- card2.getPoliticians().getSupport();
+
+        if(card1.getPoliticians().getSupport() > card2.getPoliticians().getSupport()){
+            return 1;
+
+        }else if(card1.getPoliticians().getSupport() < card2.getPoliticians().getSupport()){
+            return -1;
+        }else return 0;
     }
 }
 
 
 class sortByMoney implements Comparator<Card>{
     public int compare(Card card1, Card card2) {
-        return card1.getPoliticians().getMoney() - card2.getPoliticians().getMoney();
+        if(card1.getPoliticians().getMoney() > card2.getPoliticians().getMoney()){
+            return 1;
+        }
+        else if(card1.getPoliticians().getMoney() < card2.getPoliticians().getMoney()){
+            return -1;
+        }else return 0;
     }
 }
 
 
 class sortByBribes implements Comparator<Card>{
     public int compare(Card card1, Card card2) {
-        return card1.getPoliticians().getBribes() - card2.getPoliticians().getBribes();
+        if(card1.getPoliticians().getBribes() > card2.getPoliticians().getBribes()){
+            return 1;
+        }
+        else if(card1.getPoliticians().getBribes() < card2.getPoliticians().getBribes()){
+            return -1;
+        }else return 0;
     }
 }
+
+
 
 
 
