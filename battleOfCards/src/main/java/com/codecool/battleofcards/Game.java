@@ -23,26 +23,6 @@ public class Game {
         return players;
     }
 
-    public void deleteLoser(){
-        List<Player> playersCopy = players;
-        for (int i=0; i< playersCopy.size(); i++){
-            if (players.get(i).getStack().getCards().size() == 0){
-                players.remove(i);
-            }
-        }
-        
-    }
-
-    public void printStatistis(){
-        System.out.println("Numbers of players in game"+ players.size());
-        for (int j=0; j<players.size(); j++) {
-            System.out.println("Player" + j + " has " + players.get(j).getStack().getCards().size() +
-            " cards left");
-            
-        }
-
-    }
-
 
     private void setPlayers(int players){
         for (int i = 0; i < players; i++) {
