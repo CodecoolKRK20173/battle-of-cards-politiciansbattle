@@ -10,13 +10,15 @@ public class View{
         System.out.println("which value you want to compare? Bribes, Money or Support");
         Scanner sc = new Scanner(System.in);
         String answer = sc.nextLine().trim();
-        if (answer.equalsIgnoreCase("bribes") || answer.equalsIgnoreCase("money")
-        || answer.equalsIgnoreCase("support")){
+        if (answer.equals("bribe") || answer.equals("money")
+        || answer.equals("support")){
+
             return answer;
         }
         else {
             System.out.println("Choose one of the options");
         }
+
         return "";
 
     }
