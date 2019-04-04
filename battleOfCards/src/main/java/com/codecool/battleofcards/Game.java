@@ -2,6 +2,7 @@ package com.codecool.battleofcards;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import com.codecool.battleofcards.Card.Cards;
@@ -17,13 +18,6 @@ public class Game {
         setPlayers(players);
         setTablePile();
         dealCards();
-        System.out.println(this.table.getCards().size()+" table size");
-        System.out.println(this.players.size()+" players numb");
-
-
-        for (Player player : this.players) {
-            System.out.println(player.getStack().getCards().size() + " player deck size");
-        }
     }
     public List<Player> getPlayers(){
         return players;
@@ -47,10 +41,14 @@ public class Game {
     }
 
     public Card getWiningCard(String demand) {
-        int topCard = 0;
+
         ArrayList<Card> playerTopCards = getPlayersTopCards();
-        System.out.println(playerTopCards.size()+" player top cards size");
-        for (Player player : players) {
+        int topCard =  playerTopCards.size()-1;
+        for (Card var : playerTopCards) {
+            System.out.println(var.toString() + " BEFORE SORT");
+        }
+
+        for (int i = 0; i<players.size(); i++) {
             if(demand == "bribe"){
                 Collections.sort(playerTopCards, new sortByBribes());
             }else if(demand == "support"){
@@ -58,7 +56,12 @@ public class Game {
             }else if(demand == "money"){
                 Collections.sort(playerTopCards, new sortByMoney());
             }
+
         }
+        for (Card var : playerTopCards) {
+            System.out.println(var.toString() + " AFTER SORT");
+        }
+
         return playerTopCards.get(topCard);
     }
 
@@ -74,6 +77,7 @@ public class Game {
         int topCard = 0;
         for (Player player : players) {
             players.get(winnerIndex).getStack().addCard(player.getStackTopCard());
+            System.out.println(player.getStack().getCards().get(topCard).toString());
             player.getStack().getCards().remove(topCard);
 
         }
@@ -91,12 +95,10 @@ public class Game {
     public void dealCards(){
         int numOfPlayers = players.size();
         int restFromDivision = table.getCards().size()%numOfPlayers;
-        // System.out.println(restFromDivision+" rest from div");
         if (restFromDivision > 0){
             for (int i = 0; i < restFromDivision; i++)
                 table.removeCard(i);
         }
-        System.out.println(table.toString());
         int maxIterations = table.getCards().size() / players.size();
         for (int i = 0; i < maxIterations; i++) {
             for (int ind=0; ind<players.size() ; ind++){
@@ -104,6 +106,25 @@ public class Game {
                 table.removeCard(0);
 
             }
+        }
+    }
+
+    public void deleteLoser(){
+        List<Player> playersCopy = players;
+        for (int i=0; i< playersCopy.size(); i++){
+            if (players.get(i).getStack().getCards().size() == 0){
+                players.remove(i);
+            }
+        }
+
+    }
+
+    public void printStatistis(){
+        System.out.println("Numbers of players in game"+ players.size());
+        for (int j=0; j<players.size(); j++) {
+            System.out.println("Player" + j + " has " + players.get(j).getStack().getCards().size() +
+            " cards left");
+
         }
 
     }

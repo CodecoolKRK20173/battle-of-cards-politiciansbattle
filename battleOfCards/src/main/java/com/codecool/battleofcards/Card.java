@@ -45,27 +45,63 @@ public class Card{
             return this.support;
         }
     }
+    public String toString(){
+        String cardToString = politicians.getName() + " " +"Support: "+ politicians.getSupport() + " "
+                            + "Money: "+ politicians.getMoney() + " " +"Bribes: "+ politicians.getBribes() + "\n";
+        return cardToString;
+    }
 }
 
 
 class sortBySupport implements Comparator<Card>{
     public int compare(Card card1, Card card2) {
-        return card1.getPoliticians().getSupport()- card2.getPoliticians().getSupport();
+        int diffrence = card1.getPoliticians().getSupport()- card2.getPoliticians().getSupport();
+        if(diffrence>0){
+            return 1;
+        }
+        if(diffrence<0){
+            return -1;
+        }
+        if(diffrence==0){
+            return 0;
+        }
+        return diffrence;
     }
 }
 
 
 class sortByMoney implements Comparator<Card>{
     public int compare(Card card1, Card card2) {
-        return card1.getPoliticians().getMoney() - card2.getPoliticians().getMoney();
+        int diffrence = card1.getPoliticians().getMoney()- card2.getPoliticians().getMoney();
+        if(diffrence>0){
+            return 1;
+        }
+        if(diffrence<0){
+            return -1;
+        }
+        if(diffrence==0){
+            return 0;
+        }
+        return diffrence;
     }
 }
 
 
 class sortByBribes implements Comparator<Card>{
     public int compare(Card card1, Card card2) {
-        return card1.getPoliticians().getBribes() - card2.getPoliticians().getBribes();
+        int diffrence = card1.getPoliticians().getBribes()- card2.getPoliticians().getBribes();
+        if(diffrence>0){
+            return 1;
+        }
+        if(diffrence<0){
+            return -1;
+        }
+        if(diffrence==0){
+            return 0;
+        }
+        return diffrence;
     }
+
 }
 
 
